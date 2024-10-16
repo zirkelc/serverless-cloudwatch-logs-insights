@@ -1,0 +1,32 @@
+service: acme-service
+frameworkVersion: '3'
+package:
+  individually: true
+  patterns:
+    - '!node_modules/**'
+    - index.js
+
+plugins:
+  - serverless-localstack
+  - ./dist/index.js
+
+custom:
+  cloudwatchLogsInsights:
+    queries:
+      - name: "ErrorLogs"
+        query: "fields @timestamp, @message | filter @message like /ERROR/ | sort @timestamp desc | limit 20"
+      - name: "WarningLogs"
+        query: "fields @timestamp, @message | filter @message like /WARNING/ | sort @timestamp desc | limit 20"
+      - name: "RecentLogs"
+        query: "fields @timestamp, @message | sort @timestamp desc | limit 50"
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: dev
+
+functions:
+  foo:
+    handler: index.handler
+  bar:
+    handler: index.handler
