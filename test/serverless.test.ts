@@ -3,7 +3,6 @@ import path from 'node:path';
 import { LocalstackContainer } from '@testcontainers/localstack';
 import { $ } from 'execa';
 import { beforeEach, describe, expect, test } from 'vitest';
-import { beforeAll } from 'vitest';
 
 const CONFIG_FILE = path.join(__dirname, '..', 'serverless.yml');
 const SERVERLESS_DIR = path.join(__dirname, '..', '.serverless');
