@@ -86,6 +86,21 @@ custom:
 
 This configuration will create three CloudWatch Logs Insights queries, each including both the `hello` and `world` function log groups.
 
+## TODO
+
+- Add templates for common queries like `ErrorLogs` and other [common queries](https://github.com/aws-samples/cloudwatch-logs-insights-queries)
+
+```yaml
+custom:
+  cloudwatchLogsInsights:
+    queries:
+      - name: "ErrorLogs"
+        template: "QueryErrors" # in this case "query" is omitted
+        limit: 20
+        fields: "@message, @timestamp"
+```
+- Add support for including or excluding functions / log groups
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
