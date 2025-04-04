@@ -2,13 +2,7 @@ name: CI
 
 on:
   push:
-    branches:
-      - main
-    paths:
-      - '**.ts'
   pull_request:
-    branches:
-      - main
 
 jobs:
   lint:
