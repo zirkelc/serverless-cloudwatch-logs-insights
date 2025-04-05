@@ -29,6 +29,10 @@
   ],
   "author": "Chris Cook",
   "homepage": "https://github.com/zirkelc/serverless-cloudwatch-logs-insights",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zirkelc/serverless-cloudwatch-logs-insights"
+  },
   "license": "ISC",
   "devDependencies": {
     "@biomejs/biome": "1.9.3",
