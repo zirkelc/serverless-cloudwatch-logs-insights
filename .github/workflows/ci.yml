@@ -71,8 +71,8 @@ jobs:
 
       - name: Publish to NPM
         id: publish
-        uses: ./.github/actions/npm-publish
+        uses: zirkelc/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
-          dry-run: true
-          # provenance: true
+          dry-run: false
+          provenance: true
